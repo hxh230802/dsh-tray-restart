@@ -11,13 +11,23 @@ The action is the app’s own `app.relaunch()` + `quitWithoutConfirmation()`, so
 
 The tray and application menus live in the Electron main process (`resources/app.asar` → `lib/main.js`). DSH plugins run in the Host child process and have no runtime hook for those native menus. On every Host start this plugin therefore patches `lib/main.js` in place:
 
-1. skip when the `dsh-tray-restart:menu` marker is present;
+1. skip when the `dsh-tray-restart:menu:v2` marker is present;
 2. apply two text edits, remove an equal number of bytes of comments, and pad with spaces so the file keeps its **exact byte length** (asar offsets are fixed);
 3. run `node --check` on the patched ESM; on failure `app.asar` is left untouched;
 4. back up the original `main.js`, write the patch, update the per-file SHA256 in the asar header, read it back and verify;
 5. **restart DSH once** — the running main process still has the old code loaded.
 
 An app update replaces `app.asar`; the next launch patches the new file automatically.
+
+## Plugin page
+
+The plugin page in the plugin manager renders a `plugins.bundle.config` card with:
+
+- patch state, desktop app version, patch version;
+- `app.asar`, backup directory and log path;
+- **Re-check**, **Apply now** and **Restore original menu** actions.
+
+Restoring writes the backup back and pauses automatic patching, so the next launch does not immediately re-apply it; **Apply now** resumes. A written patch still needs one DSH restart to take effect.
 
 ## Install
 

@@ -1,6 +1,6 @@
 {
   "name": "dsh-tray-restart",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "把「重启 DeepSeek Harness」加进 Windows 桌面端现有的托盘/应用菜单（补丁 app.asar 的 lib/main.js，重启后生效）。",
   "icon": "icon.png",
   "author": "hxh230802",
@@ -16,6 +16,7 @@
   "main": "lib/index.js",
   "exports": {
     ".": "./lib/index.js",
+    "./client": "./lib/client.js",
     "./cordis.patch.yml": "./cordis.patch.yml",
     "./package.json": "./package.json",
     "./locale/*.json": "./locale/*.json"
@@ -44,6 +45,12 @@
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-plugin-manager"
+      ]
     }
   },
   "license": "MIT"
