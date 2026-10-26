@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "托盘重启 (dsh-tray-restart)",
+    "description": "把「重启 DeepSeek Harness」加进桌面端现有的托盘和应用菜单；插件会自动检查并修补 app.asar，重启一次生效。"
+  }
+}

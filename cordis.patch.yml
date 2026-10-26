@@ -1,0 +1,11 @@
+# dsh-tray-restart 的 bundle patch。
+#
+# 只插入一行 Loader 条目；插件在 Host 启动时检查并修补桌面端的 lib/main.js。
+# 所有配置都有代码内默认值，用户可在自己的 profile patch 里按 id 覆盖。
+- insert:
+    - id: dsh-tray-restart
+      name: dsh-tray-restart
+      config:
+        enabled: true
+        dryRun: false
+        verifySyntax: true

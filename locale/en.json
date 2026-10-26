@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Tray Restart (dsh-tray-restart)",
+    "description": "Adds “重启 DeepSeek Harness” to the desktop app’s existing tray and application menus by patching app.asar; restart once to apply."
+  }
+}
