@@ -31,16 +31,22 @@
 
 ## 安装
 
-在 DSH 的插件管理器里安装 GitHub 仓库：
+在 DSH 的插件管理器里安装 npm 包：
+
+```
+@hxhxh/dsh-tray-restart
+```
+
+或从 GitHub 安装：
 
 ```
 github:hxh230802/dsh-tray-restart
 ```
 
-或使用 `plugin_manager` 工具：
+`plugin_manager` 工具的 npm 目标：
 
 ```json
-{ "action": "install_bundle", "target": "github:hxh230802/dsh-tray-restart" }
+{ "action": "install_bundle", "target": "@hxhxh/dsh-tray-restart" }
 ```
 
 安装后如果 Host 已经热加载了插件，`app.asar` 会立刻被补上，但菜单要**重启一次**才更新。也可以手动落盘：

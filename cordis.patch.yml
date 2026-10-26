@@ -4,7 +4,7 @@
 # 所有配置都有代码内默认值，用户可在自己的 profile patch 里按 id 覆盖。
 - insert:
     - id: dsh-tray-restart
-      name: dsh-tray-restart
+      name: '@hxhxh/dsh-tray-restart'
       config:
         enabled: true
         dryRun: false

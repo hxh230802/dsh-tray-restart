@@ -173,7 +173,7 @@ if (!loaded || typeof loaded.apply !== 'function') {
   process.exit(1)
 }
 await loaded.apply(clientCtx)
-if (registrations.length !== 1 || registrations[0].options.key !== 'dsh-tray-restart') {
+if (registrations.length !== 1 || registrations[0].options.key !== '@hxhxh/dsh-tray-restart') {
   console.error('FAIL: plugins.bundle.config card not registered')
   console.error(JSON.stringify(registrations.map((r) => r.options)))
   process.exit(1)

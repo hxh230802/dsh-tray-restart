@@ -31,16 +31,22 @@ Restoring writes the backup back and pauses automatic patching, so the next laun
 
 ## Install
 
-Install from GitHub with the DSH plugin manager:
+Install from npm with the DSH plugin manager:
+
+```
+@hxhxh/dsh-tray-restart
+```
+
+or from GitHub:
 
 ```
 github:hxh230802/dsh-tray-restart
 ```
 
-or:
+`plugin_manager` target for npm:
 
 ```json
-{ "action": "install_bundle", "target": "github:hxh230802/dsh-tray-restart" }
+{ "action": "install_bundle", "target": "@hxhxh/dsh-tray-restart" }
 ```
 
 Manual one-shot patch (also useful for debugging):
